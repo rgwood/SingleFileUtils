@@ -1,7 +1,7 @@
 using Utils;
 using Xunit;
 
-namespace ScriptCompilerTests;
+namespace SingleFileUtilsTests;
 
 public class Tests
 {
@@ -11,8 +11,6 @@ public class Tests
     [InlineData("SingleFileUtils.EmbeddedResources.foo", "foo")]
     public void ResourceNameToFileNameWorks(string resourceName, string expectedFilePath)
     {
-        //string resourceName = "ScriptCompiler.EmbeddedResources.Helpers.GlobalUsings.cs";
-        //string expectedFilePath = "Helpers/GlobalUsings.cs";
         string osIndependentFilePath = expectedFilePath.Replace('/', Path.DirectorySeparatorChar);
         Assert.Equal(osIndependentFilePath, ResourceUtils.FileNameFromResourceName(resourceName));
     }
