@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+        <!-- Make sure we don't compile anything in EmbeddedResources -->
+        <Compile Remove="EmbeddedResources\**" />
+        <EmbeddedResource Include="EmbeddedResources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Ben.Demystifier" Version="0.4.1" />
     <PackageReference Include="CliWrap" Version="3.4.0" />
     <PackageReference Include="Spectre.Console" Version="0.43.0" />
